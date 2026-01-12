@@ -1,1 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>DreamSmashers</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="style.css" />
+</head>
 
+<body>
+
+<!-- OPENING SCREEN -->
+<div id="opening-screen" class="screen active">
+  <h1 class="logo">DREAMSMASHERS</h1>
+
+  <button id="press-start" class="press-start">
+    ▶ PRESS START
+  </button>
+
+  <div id="falling-container"></div>
+</div>
+
+<!-- MAIN APP SCREEN -->
+<div id="main-screen" class="screen">
+
+  <!-- CART ICON -->
+  <div id="cart-icon">🛒</div>
+
+  <!-- CART PANEL -->
+  <div id="cart-panel">
+    <h2>Inventory</h2>
+    <div id="cart-items"></div>
+    <div class="cart-footer">
+      <span id="cart-total">£0.00</span>
+      <button id="close-cart">Close</button>
+    </div>
+    <div id="cart-bin">🗑 Drop Here</div>
+  </div>
+
+  <!-- ICON GRID -->
+  <div class="icon-grid">
+    <button class="icon-btn" data-section="drinks">🍹 Drinks</button>
+    <button class="icon-btn" data-section="food">🍔 Food</button>
+    <button class="icon-btn" data-section="events">🎮 Events</button>
+    <button class="icon-btn" data-section="battlepass">⚔ Battle Pass</button>
+    <button class="icon-btn" data-section="nutrition">📊 Nutrition</button>
+    <button class="icon-btn" data-section="allergens">⚠ Allergens</button>
+  </div>
+
+</div>
+
+<!-- MODAL -->
+<div id="modal" class="hidden">
+  <div id="modal-content"></div>
+  <button id="modal-close">Close</button>
+</div>
+
+<script src="app.js" defer></script>
+</body>
+</html>
