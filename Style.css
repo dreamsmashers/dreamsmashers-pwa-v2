@@ -1,1 +1,91 @@
+/* =========================
+   CART - Skyrim Style Visuals
+========================= */
+#cart-items {
+  margin-top: 10px;
+  min-height: 200px;
+  padding: 5px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
 
+/* Individual cart box */
+.cart-box {
+  border: 2px solid #777;
+  background: #1a1a1a;
+  padding: 8px;
+  width: 100px;
+  height: 120px;
+  text-align: center;
+  cursor: grab;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 6px;
+  transition: transform 0.2s, border-color 0.2s, box-shadow 0.2s;
+}
+
+/* Hover effect for boxes */
+.cart-box:hover {
+  transform: translateY(-5px) scale(1.05);
+  border-color: #ff2d95;
+  box-shadow: 0 4px 12px rgba(255, 45, 149, 0.5);
+}
+
+/* Emoji / icon at top */
+.cart-box div:first-child {
+  font-size: 28px;
+  margin-bottom: 4px;
+}
+
+/* Item name */
+.cart-box div:nth-child(2) {
+  font-size: 11px;
+  font-weight: bold;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+  width: 90%;
+}
+
+/* Stack / quantity */
+.cart-box div:nth-child(3) {
+  font-size: 12px;
+  color: #ff2d95;
+}
+
+/* Price */
+.cart-box div:nth-child(4) {
+  font-size: 12px;
+  color: #ccc;
+}
+
+/* Bin highlight on hover */
+#cart-bin.drag-over {
+  background: #ff2d95;
+  color: #000;
+  border-color: #fff;
+  transition: background 0.2s, color 0.2s;
+}
+
+/* Optional: cart panel scrollbar */
+#cart-items::-webkit-scrollbar {
+  width: 8px;
+}
+#cart-items::-webkit-scrollbar-thumb {
+  background: #555;
+  border-radius: 4px;
+}
+#cart-items::-webkit-scrollbar-track {
+  background: #111;
+}
+
+/* Add some spacing between the cart panel title and inventory */
+#cart-panel h2 {
+  margin-bottom: 8px;
+  text-align: center;
+  font-size: 18px;
+  color: #ff2d95;
+}
