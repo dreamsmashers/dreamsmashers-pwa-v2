@@ -4,51 +4,92 @@
   <meta charset="UTF-8" />
   <title>DreamSmashers</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- Retro font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+
+  <!-- Styles -->
   <link rel="stylesheet" href="style.css" />
-  <link rel="manifest" href="manifest.json" />
+
+  <!-- PWA -->
+  <link rel="manifest" href="manifest.json">
+  <meta name="theme-color" content="#ff2d95">
 </head>
+
 <body>
 
-<!-- OPENING SCREEN -->
+<!-- =========================
+     OPENING SCREEN
+========================= -->
 <div id="opening-screen" class="screen active">
   <h1 class="logo">DREAMSMASHERS</h1>
-  <button id="press-start" class="press-start">▶ PRESS START</button>
+
+  <button id="press-start" class="press-start">
+    ▶ PRESS START
+  </button>
+
   <div id="falling-container"></div>
 </div>
 
-<!-- MAIN APP SCREEN -->
+<!-- =========================
+     MAIN APP SCREEN
+========================= -->
 <div id="main-screen" class="screen">
-  <!-- CART ICON -->
-  <div id="cart-icon">🛒</div>
 
-  <!-- CART PANEL -->
-  <div id="cart-panel">
+  <!-- CART ICON -->
+  <button id="cart-icon" aria-label="Open inventory">
+    🛒
+  </button>
+
+  <!-- CART / INVENTORY PANEL -->
+  <aside id="cart-panel">
     <h2>Inventory</h2>
-    <div id="cart-items"></div>
+
+    <div id="cart-items">
+      <!-- Stackable items injected by JS -->
+    </div>
+
     <div class="cart-footer">
       <span id="cart-total">£0.00</span>
       <button id="close-cart">Close</button>
     </div>
-    <div id="cart-bin">🗑 Drop Here</div>
-  </div>
 
-  <!-- ICON GRID -->
-  <div class="icon-grid">
+    <div id="cart-bin">
+      🗑 Drop items here
+    </div>
+  </aside>
+
+  <!-- =========================
+       ICON GRID NAVIGATION
+  ========================= -->
+  <nav class="icon-grid">
     <button class="icon-btn" data-section="drinks">🍹 Drinks</button>
     <button class="icon-btn" data-section="food">🍔 Food</button>
     <button class="icon-btn" data-section="events">🎮 Events</button>
     <button class="icon-btn" data-section="battlepass">⚔ Battle Pass</button>
     <button class="icon-btn" data-section="nutrition">📊 Nutrition</button>
     <button class="icon-btn" data-section="allergens">⚠ Allergens</button>
-  </div>
+  </nav>
+
 </div>
 
-<!-- MODAL -->
-<div id="modal" class="hidden">
-  <div id="modal-content"></div>
+<!-- =========================
+     MODAL (Menus / Events / BP)
+========================= -->
+<div id="modal" class="hidden" role="dialog" aria-modal="true">
+  <div id="modal-content">
+    <!-- Dynamic content injected by JS -->
+  </div>
+
   <button id="modal-close">Close</button>
 </div>
 
+<!-- =========================
+     SCRIPT
+========================= -->
 <script src="app.js" defer></script>
+
 </body>
 </html>
